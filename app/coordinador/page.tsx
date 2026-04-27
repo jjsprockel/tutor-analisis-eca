@@ -32,7 +32,7 @@ export default async function CoordinadorPage() {
       userSessions.length > 0
         ? Math.round(
             userSessions.reduce(
-              (acc, s) => acc + (s.currentStage / 16) * 100,
+              (acc, s) => acc + (s.currentStage / 18) * 100,
               0
             ) / userSessions.length
           )

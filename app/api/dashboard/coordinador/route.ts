@@ -44,7 +44,7 @@ export async function GET(req: NextRequest) {
     const avgProgress =
       userSessions.length > 0
         ? Math.round(
-            userSessions.reduce((acc, s) => acc + (s.currentStage / 16) * 100, 0) /
+            userSessions.reduce((acc, s) => acc + (s.currentStage / 18) * 100, 0) /
               userSessions.length
           )
         : 0;

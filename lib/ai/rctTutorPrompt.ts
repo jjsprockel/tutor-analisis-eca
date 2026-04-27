@@ -1,20 +1,22 @@
 export const STAGES = [
-  { id: 1,  name: "Introducción",              label: "1. Introducción" },
-  { id: 2,  name: "Objetivo",                  label: "2. Objetivo" },
-  { id: 3,  name: "Hipótesis y diseño",        label: "3. Hipótesis y diseño" },
-  { id: 4,  name: "Aleatorización",            label: "4. Aleatorización" },
-  { id: 5,  name: "Cegamiento",                label: "5. Cegamiento" },
-  { id: 6,  name: "Población",                 label: "6. Población" },
-  { id: 7,  name: "Desenlaces",                label: "7. Desenlaces" },
-  { id: 8,  name: "Análisis estadístico",      label: "8. Análisis estadístico" },
-  { id: 9,  name: "Resultados · Flujo",        label: "9. Resultados · Flujo de pacientes" },
-  { id: 10, name: "Resultados · Población",    label: "10. Resultados · Características basales" },
-  { id: 11, name: "Resultados · Desenlace",    label: "11. Resultados · Desenlace primario" },
-  { id: 12, name: "Resultados · Figuras",      label: "12. Resultados · Figuras" },
-  { id: 13, name: "Resultados · Subgrupos",    label: "13. Resultados · Análisis de subgrupos" },
-  { id: 14, name: "Resultados · EAs",          label: "14. Resultados · Eventos adversos" },
-  { id: 15, name: "Discusión y sesgos",        label: "15. Discusión y sesgos" },
-  { id: 16, name: "Retroalimentación",         label: "16. Retroalimentación" },
+  { id: 1,  name: "Introducción",                   label: "1. Introducción" },
+  { id: 2,  name: "Objetivo",                       label: "2. Objetivo" },
+  { id: 3,  name: "Hipótesis y diseño",             label: "3. Hipótesis y diseño" },
+  { id: 4,  name: "Aleatorización",                 label: "4. Aleatorización" },
+  { id: 5,  name: "Cegamiento",                     label: "5. Cegamiento" },
+  { id: 6,  name: "Población",                      label: "6. Población" },
+  { id: 7,  name: "Desenlaces",                     label: "7. Desenlaces" },
+  { id: 8,  name: "Análisis estadístico",           label: "8. Análisis estadístico" },
+  { id: 9,  name: "Resultados · Flujo",             label: "9. Resultados · Flujo de pacientes" },
+  { id: 10, name: "Resultados · Población",         label: "10. Resultados · Características basales" },
+  { id: 11, name: "Resultados · Medida asociación", label: "11. Resultados · Medida de asociación" },
+  { id: 12, name: "Resultados · RRA · RRR · NNT",  label: "12. Resultados · RRA · RRR · NNT" },
+  { id: 13, name: "Resultados · Significancia",     label: "13. Resultados · Significancia estadística" },
+  { id: 14, name: "Resultados · Figuras",           label: "14. Resultados · Figuras" },
+  { id: 15, name: "Resultados · Subgrupos",         label: "15. Resultados · Análisis de subgrupos" },
+  { id: 16, name: "Resultados · EAs",               label: "16. Resultados · Eventos adversos" },
+  { id: 17, name: "Discusión y sesgos",             label: "17. Discusión y sesgos" },
+  { id: 18, name: "Retroalimentación",              label: "18. Retroalimentación" },
 ];
 
 export const TOTAL_STAGES = STAGES.length;
@@ -31,19 +33,21 @@ export const STAGE_QUESTIONS: Record<number, string> = {
   8:  `En la subsección de **análisis estadístico** de Métodos, ¿cómo se calculó el **tamaño de muestra**? Identifica el nivel de significancia (α), el poder estadístico (1−β) y la diferencia mínima clínicamente importante. ¿El análisis principal fue por **intención de tratar (ITT)** o por protocolo?`,
   9:  `Ubica el **diagrama de flujo de pacientes** (CONSORT) en la sección de Resultados. ¿Cuántos pacientes fueron aleatorizados en total? ¿Cuántos completaron el seguimiento en cada grupo? ¿Cuáles fueron los motivos principales de pérdida o retirada?`,
   10: `Lee la **tabla de características basales** (generalmente Tabla 1 en Resultados). ¿Son los grupos comparables al inicio? ¿Existen diferencias que pudieran actuar como factores de confusión?`,
-  11: `Leyendo los **resultados del desenlace primario**, ¿cuál fue el resultado en cada grupo? Reporta la **medida de asociación principal** (RR, OR o HR) con su **intervalo de confianza al 95 %** y el **valor p**.`,
-  12: `Busca las **figuras de resultados** del artículo. Si hay una **curva de supervivencia** (Kaplan-Meier): ¿en qué momento se separan las curvas? ¿La separación se mantiene en el tiempo o converge? ¿Qué sugiere eso sobre la durabilidad del efecto? Si hay un **forest plot**: ¿cuál es la dirección del efecto en la mayoría de los subgrupos? ¿Los intervalos de confianza de los subgrupos cruzan la línea de no efecto? ¿Son los resultados consistentes entre subgrupos?`,
-  13: `¿Existen **análisis de subgrupos** en el artículo? Identifica si estaban **prespecificados** en el protocolo o son **exploratorios** (post-hoc). ¿Hay algún subgrupo con un resultado notablemente diferente al efecto principal? ¿Cómo debe interpretarse ese hallazgo dado el carácter prespecificado o exploratorio del análisis?`,
-  14: `Leyendo la sección de **seguridad o eventos adversos**, ¿cuáles fueron los eventos adversos más relevantes en cada grupo? ¿Cómo influye el perfil de seguridad en el balance riesgo-beneficio de la intervención?`,
-  15: `Leyendo la **Discusión** y la subsección de limitaciones, ¿cuál es el **sesgo** más relevante que identificas y cómo lo manejaron los autores? ¿Son los resultados aplicables al contexto clínico local?`,
+  11: `Leyendo los **resultados del desenlace primario**, ¿cuál fue la tasa (o proporción) de eventos en el **grupo intervención** y en el **grupo control**? ¿Cuál es la **medida de asociación** que reportan los autores (RR, OR o HR)? ¿Cuál es su valor exacto? Explica qué representa ese número y de dónde procede.`,
+  12: `A partir de las tasas de eventos de cada grupo que identificaste, calcula la **Reducción Absoluta del Riesgo (RRA)**, la **Reducción Relativa del Riesgo (RRR)** y el **Número Necesario a Tratar (NNT)**. ¿Qué diferencia hay entre la RRR y la RRA? ¿Cuál de los tres indicadores refleja mejor el beneficio real para un paciente individual?`,
+  13: `¿Cuál es el **valor p** del resultado del desenlace primario? ¿Cuál es el **intervalo de confianza al 95 %** (IC 95 %)? ¿Cruza el IC 95 % la línea de no efecto (RR/HR/OR = 1, o diferencia = 0)? ¿Cómo interpretas la relación entre la **significancia estadística** y la **relevancia clínica** de este resultado?`,
+  14: `Busca las **figuras de resultados** del artículo. Si hay una **curva de supervivencia** (Kaplan-Meier): ¿en qué momento se separan las curvas? ¿La separación se mantiene en el tiempo o converge? ¿Qué sugiere eso sobre la durabilidad del efecto? Si hay un **forest plot**: ¿cuál es la dirección del efecto en la mayoría de los subgrupos? ¿Los intervalos de confianza de los subgrupos cruzan la línea de no efecto? ¿Son los resultados consistentes entre subgrupos?`,
+  15: `¿Existen **análisis de subgrupos** en el artículo? Identifica si estaban **prespecificados** en el protocolo o son **exploratorios** (post-hoc). ¿Hay algún subgrupo con un resultado notablemente diferente al efecto principal? ¿Cómo debe interpretarse ese hallazgo dado el carácter prespecificado o exploratorio del análisis?`,
+  16: `Leyendo la sección de **seguridad o eventos adversos**, ¿cuáles fueron los eventos adversos más relevantes en cada grupo? ¿Cómo influye el perfil de seguridad en el balance riesgo-beneficio de la intervención?`,
+  17: `Leyendo la **Discusión** y la subsección de limitaciones, ¿cuál es el **sesgo** más relevante que identificas y cómo lo manejaron los autores? ¿Son los resultados aplicables al contexto clínico local?`,
 };
 
 // Extra pedagogical note shown after validating the student's answer on specific stages
 const STAGE_EXTRA: Record<number, string> = {
-  11: `Después de validar la respuesta, explica OBLIGATORIAMENTE el ejemplo pedagógico sobre **RRR vs RRA vs NNT**:
+  12: `Después de validar los cálculos, ilustra OBLIGATORIAMENTE con este ejemplo pedagógico sobre **RRR vs RRA vs NNT**:
 Escenario A: riesgo control 40 %, intervención 32 % → RRR 20 %, RRA 8 %, NNT 12,5.
 Escenario B: riesgo control 5 %, intervención 4 % → RRR 20 %, RRA 1 %, NNT 100.
-Mensaje clave: no basta con la RRR — siempre evalúa la RRA y el NNT según el riesgo basal del paciente.`,
+Mensaje clave: con la misma RRR del 20 %, el beneficio absoluto es radicalmente distinto según el riesgo basal. Siempre evalúa la RRA y el NNT en el contexto del riesgo basal del paciente.`,
 };
 
 export function buildSystemPrompt(normativeContent: string): string {
@@ -87,7 +91,7 @@ export function buildStagePrompt(
     return `La sesión acaba de comenzar. Saluda brevemente al estudiante (1-2 oraciones) e indica que analizarán el artículo sección por sección. Luego formula esta primera pregunta: "${STAGE_QUESTIONS[1]}"`;
   }
 
-  if (stage === 16) {
+  if (stage === 18) {
     return `El análisis del artículo ha concluido. Genera la retroalimentación cualitativa final.
 Estructura la respuesta en: **comprensión metodológica**, **interpretación estadística**, **juicio clínico** y **aplicabilidad**.
 Cierra con un juicio integrado sobre **validez interna**, **importancia clínica** y **aplicabilidad** al contexto local. Sin nota numérica.${frag}`;

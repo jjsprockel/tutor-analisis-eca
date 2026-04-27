@@ -138,12 +138,14 @@ export default function AcercaPage() {
               { n: "8",   section: "Métodos — Análisis estadístico", desc: "Tamaño de muestra, α, poder estadístico (1−β), diferencia mínima clínicamente importante. Análisis por intención de tratar (ITT) vs. por protocolo." },
               { n: "9",   section: "Resultados — Flujo de pacientes", desc: "Diagrama CONSORT: aleatorización, seguimiento, pérdidas y motivos de exclusión en cada grupo." },
               { n: "10",  section: "Resultados — Características basales", desc: "Comparabilidad de los grupos al inicio. Identificación de posibles factores de confusión." },
-              { n: "11",  section: "Resultados — Desenlace primario", desc: "Medida de asociación principal (RR, OR, HR), IC 95% y valor p. Explicación de RRR, RRA y NNT con escenarios clínicos." },
-              { n: "12",  section: "Resultados — Figuras", desc: "Interpretación de curvas de supervivencia (Kaplan-Meier): separación, convergencia y durabilidad del efecto. Forest plots: dirección del efecto, intervalos de confianza y consistencia entre subgrupos." },
-              { n: "13",  section: "Resultados — Análisis de subgrupos", desc: "Identificación de subgrupos prespecificados vs. exploratorios. Interpretación de heterogeneidad del efecto y sus implicaciones." },
-              { n: "14",  section: "Resultados — Eventos adversos", desc: "Perfil de seguridad en cada grupo. Balance riesgo-beneficio de la intervención." },
-              { n: "15",  section: "Discusión y sesgos", desc: "Sesgos de selección, información y confusión. Limitaciones reconocidas por los autores. Aplicabilidad al contexto local." },
-              { n: "16",  section: "Retroalimentación final", desc: "Evaluación cualitativa del proceso: comprensión metodológica, interpretación estadística, juicio clínico y aplicabilidad." },
+              { n: "11",  section: "Resultados — Medida de asociación", desc: "Tasas de eventos en cada grupo. Identificación de la medida de asociación (RR, OR o HR), su valor exacto y origen en los datos del artículo." },
+              { n: "12",  section: "Resultados — RRA · RRR · NNT", desc: "Cálculo de la Reducción Absoluta del Riesgo (RRA), Reducción Relativa del Riesgo (RRR) y Número Necesario a Tratar (NNT). Diferencia conceptual e implicaciones clínicas de cada indicador." },
+              { n: "13",  section: "Resultados — Significancia estadística", desc: "Interpretación del valor p y del intervalo de confianza al 95 % (IC 95 %). Cruce de la línea de no efecto. Distinción entre significancia estadística y relevancia clínica." },
+              { n: "14",  section: "Resultados — Figuras", desc: "Interpretación de curvas de supervivencia (Kaplan-Meier): separación, convergencia y durabilidad del efecto. Forest plots: dirección del efecto, intervalos de confianza y consistencia entre subgrupos." },
+              { n: "15",  section: "Resultados — Análisis de subgrupos", desc: "Identificación de subgrupos prespecificados vs. exploratorios. Interpretación de heterogeneidad del efecto y sus implicaciones." },
+              { n: "16",  section: "Resultados — Eventos adversos", desc: "Perfil de seguridad en cada grupo. Balance riesgo-beneficio de la intervención." },
+              { n: "17",  section: "Discusión y sesgos", desc: "Sesgos de selección, información y confusión. Limitaciones reconocidas por los autores. Aplicabilidad al contexto local." },
+              { n: "18",  section: "Retroalimentación final", desc: "Evaluación cualitativa del proceso: comprensión metodológica, interpretación estadística, juicio clínico y aplicabilidad." },
             ].map((stage) => (
               <div key={stage.n} className="flex gap-4 bg-white rounded-xl border border-[#e0e3e5] p-4 shadow-sm">
                 <div className="w-9 h-9 rounded-full bg-[#1E293B] flex items-center justify-center text-[#4fdbc8] text-xs font-bold flex-shrink-0">

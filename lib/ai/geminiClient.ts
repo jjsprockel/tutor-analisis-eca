@@ -58,12 +58,14 @@ const MOCK_STAGE_MESSAGES: Record<number, string[]> = {
   8:  ["Correcto. En **análisis estadístico**: ¿cómo se calculó el **tamaño de muestra**? ¿El análisis fue por **ITT** o por protocolo?"],
   9:  ["Bien. Ubica el **diagrama de flujo CONSORT**: ¿cuántos fueron aleatorizados? ¿Cuántos completaron? ¿Motivos de pérdida?"],
   10: ["Bien. Lee la **tabla de características basales**: ¿son los grupos comparables? ¿Hay diferencias que pudieran confundir?"],
-  11: ["Bien. **Desenlace primario**: ¿cuál fue la medida de asociación (RR, OR, HR), su **IC 95 %** y el **valor p**?"],
-  12: ["Bien. Busca las **figuras de resultados**: curvas de supervivencia y forest plots. ¿Qué muestran? ¿Cómo interpretas la separación de curvas o la distribución de los intervalos en el forest plot?"],
-  13: ["Bien. ¿Existen **análisis de subgrupos**? ¿Estaban prespecificados o son exploratorios? ¿Hay algún subgrupo con resultado notablemente diferente al efecto principal?"],
-  14: ["Bien. Leyendo la sección de **eventos adversos**: ¿cuáles fueron los más relevantes? ¿Cómo afecta el perfil de seguridad al balance riesgo-beneficio?"],
-  15: ["Bien. En la **Discusión**: ¿cuál es el **sesgo** más relevante y cómo lo manejaron los autores? ¿Son los resultados aplicables a tu contexto?"],
-  16: ["Excelente trabajo completando el análisis. A continuación encontrarás la retroalimentación cualitativa sobre tu proceso."],
+  11: ["Bien. Leyendo los **resultados del desenlace primario**: ¿cuál fue la tasa de eventos en el grupo intervención y en el grupo control? ¿Cuál es la **medida de asociación** reportada (RR, OR o HR) y cuál es su valor? Explica qué representa ese número y de dónde procede."],
+  12: ["Bien. A partir de esas tasas, calcula la **RRA** (Reducción Absoluta del Riesgo), la **RRR** (Reducción Relativa del Riesgo) y el **NNT** (Número Necesario a Tratar). ¿Cuál refleja mejor el beneficio real para un paciente individual?"],
+  13: ["Bien. ¿Cuál es el **valor p** del desenlace primario? ¿Cuál es el **IC 95 %**? ¿Cruza la línea de no efecto? ¿Cómo distingues **significancia estadística** de **relevancia clínica**?"],
+  14: ["Bien. Busca las **figuras de resultados**: curvas de supervivencia y forest plots. ¿Qué muestran? ¿Cómo interpretas la separación de curvas o la distribución de los intervalos en el forest plot?"],
+  15: ["Bien. ¿Existen **análisis de subgrupos**? ¿Estaban prespecificados o son exploratorios? ¿Hay algún subgrupo con resultado notablemente diferente al efecto principal?"],
+  16: ["Bien. Leyendo la sección de **eventos adversos**: ¿cuáles fueron los más relevantes? ¿Cómo afecta el perfil de seguridad al balance riesgo-beneficio?"],
+  17: ["Bien. En la **Discusión**: ¿cuál es el **sesgo** más relevante y cómo lo manejaron los autores? ¿Son los resultados aplicables a tu contexto?"],
+  18: ["Excelente trabajo completando el análisis. A continuación encontrarás la retroalimentación cualitativa sobre tu proceso."],
 };
 
 async function callGemini(prompt: string, systemInstruction: string): Promise<string> {
