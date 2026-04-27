@@ -1,0 +1,82 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  passwordHash  String
+  role          String    @default("estudiante")
+  academicLevel String    @default("interno")
+  createdAt     DateTime  @default(now())
+
+  sessions      Session[]
+  articles      Article[]
+
+  @@map("users")
+}
+
+model Article {
+  id                String   @id @default(cuid())
+  userId            String
+  filename          String
+  title             String?
+  processedText     String
+  extractedMetadata String   @default("{}")
+  isRCT             Boolean  @default(false)
+  validationStatus  String   @default("pending")
+  createdAt         DateTime @default(now())
+
+  user     User      @relation(fields: [userId], references: [id])
+  sessions Session[]
+
+  @@map("articles")
+}
+
+model Session {
+  id              String   @id @default(cuid())
+  userId          String
+  articleId       String
+  status          String   @default("active")
+  currentStage    Int      @default(1)
+  progress        String   @default("{}")
+  accumulatedTime Int      @default(0)
+  finalFeedback   String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user     User           @relation(fields: [userId], references: [id])
+  article  Article        @relation(fields: [articleId], references: [id])
+  messages TutorMessage[]
+
+  @@map("sessions")
+}
+
+model TutorMessage {
+  id        String   @id @default(cuid())
+  sessionId String
+  role      String
+  content   String
+  stage     Int
+  createdAt DateTime @default(now())
+
+  session Session @relation(fields: [sessionId], references: [id])
+
+  @@map("tutor_messages")
+}
+
+model NormativeContent {
+  id         String   @id @default(cuid())
+  chapterKey String   @unique
+  title      String
+  content    String
+  updatedAt  DateTime @updatedAt
+
+  @@map("normative_content")
+}
